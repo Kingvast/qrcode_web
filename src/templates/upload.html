@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>上传APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/upload.css" />
+</head>
+
+<body class="app">
+    <span class="pattern left">
+        <img src="../static/img/left.png">
+    </span>
+
+    <span class="pattern right">
+        <img src="../static/img/right.png">
+    </span>
+    <div class="form-upload">
+        <form id="upload_form" name="upload" action="http://127.0.0.1:8000/upload" method="POST" enctype="multipart/form-data">
+            <h1>上传APP
+                <span>请上传您的APP</span>
+            </h1>
+
+            <label>
+                <span>系统类型</span>
+                <select name="type" onchange="formchagne()">
+                    <option value="android" selected="selected">android</option>
+                    <option value="ios">ios</option>
+                </select>
+            </label>
+
+            <label id="icon_label" style="display:none">
+                <span>图标预览</span>
+                <div id="preview_img"></div>         
+            </label>
+
+            <label>
+                <span>APP图标</span>
+                <input id="icon" type="file" name="app_icon" accept="image/*" onchange="iconCheck(this);" required>
+            </label>
+
+            <label>
+                <span>APP文件</span>
+                <input id="file" type="file" name="file" accept=".apk" required>
+            </label>
+
+            <label>
+                <span>APP名称</span>
+                <input id="name" type="text" name="app_name" required>
+            </label>
+
+            <label>
+                <span>APP版本</span>
+                <input id="version" type="text" name="version" required>
+            </label>
+
+            <label id="package_name_label">
+                <span>APP包名</span>
+                <input id="package_name" type="text" name="package_name" required>
+            </label>
+
+            <label id="bundle_id_label" style="display:none">
+                <span>Bundle ID</span>
+                <input id="bundle_id" type="text" name="bundle_id">
+            </label>
+
+            <label>
+                <span>MD5验证</span>
+                <input id="md5" type="text" name="md5" readonly="readonly" required>
+            </label>
+
+            <label>
+                <span>&nbsp;</span>
+                <input type="submit" class="button" value="上传" />
+            </label>
+        </form>
+    </div>
+    <script src="../static/js/jquery-3.3.1.js"></script>
+    <script src="../static/js/spark-md5.js"></script>
+    <script src="../static/js/upload.js"></script>
+</body>
+
+</html>

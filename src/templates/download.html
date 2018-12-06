@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="minimal-ui,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../static/css/download.css">
+    <title>{{app_name}}</title>
+</head>
+
+<body class="app">
+
+<span class="pattern left">
+        <img src="../static/img/left.png">
+    </span>
+<span class="pattern right">
+        <img src="../static/img/right.png">
+    </span>
+
+<div class="out-container">
+    <div class="main">
+        <header>
+            <div class="table-container">
+                <div class="cell-container">
+                    <div class="app-brief">
+                        <div class="icon-container wrapper">
+                            <i class="icon-icon_path bg-path"></i>
+                            <span class="icon">
+                                <img src={{app_icon}}>
+                            </span>
+
+                            <span class="qrcode" id="qrcode"></span>
+                        </div>
+
+                        <p class="release-type wrapper">&nbsp;</p>
+
+                        <h1 class="name wrapper">
+                                <span class="icon-warp">
+                                    {{app_name}}
+                                </span>
+                        </h1>
+
+                        <p class="scan-tips">扫描二维码下载
+                            <br>或用手机浏览器输入这个网址：
+                            <span class="text-black">{{app_url}}</span>
+                        </p>
+
+                        <div class="release-info">
+                            <p>
+                                <span>{{app_version}}</span>
+                            </p>
+                            <p>更新于：
+                                <span>{{updated_on}}</span>
+                            </p>
+                            <p>
+                                <strong>ios9 以上用户安装后如出现未受信任的证书解决方法如下：<br> 打开设置 - 通用 - 描述文件 - 企业级应用 - 选取描述文件点击信任</strong>
+                            </p>
+                        </div>
+
+                        <div id="actions" class="actions type-android">
+                            <button onclick=window.open("{{app_download}}")>Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+<script src="../static/js/qrcode.js"></script>
+<script type="text/javascript">
+    var app_download_url = {{app_url|tojson}}
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: app_download_url,
+        colorLight: "#EDF0F0"
+    });
+</script>
+</body>
+
+</html>

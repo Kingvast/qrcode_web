@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd docker
+docker-compose up -d
+
+echo ''
+echo 'Run: docker-compose exec app_qrcode bash'
+echo ''
+echo ''
+docker-compose exec app_qrcode bash

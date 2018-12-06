@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  couchdb:
+    image: couchdb:2.1
+    ports:
+      - "5984:5984"
+
+  app_qrcode:
+    restart: always
+    build: ../
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../src:/opt/app
+    command: sleep 999999

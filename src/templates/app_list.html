@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        App 下载管理
+    </title>
+    <link href="../static/bootstrap-3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="../static/css/app_list.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">App 下载管理</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    App 管理
+                </div>
+                <div class="panel-body">
+                    {% for app in app_details %}
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                        <img src="{{app.image_path}}" class="img-rounded">
+                        <h2>{{app.app_name}}</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item"><span
+                                    class="glyphicon glyphicon-tag">&nbsp平台：{{app.type}}</span>
+                            </li>
+                            <li class="list-group-item"><span
+                                    class="glyphicon glyphicon-phone">&nbsp当前版本：{{app.version}}</span>
+                            </li>
+                            <li class="list-group-item"><span
+                                    class="glyphicon glyphicon-time">&nbsp上传时间：{{app.updated_on}}</span>
+                            </li>
+                            <li class="list-group-item"><span
+                                    class="glyphicon glyphicon-download-alt">&nbsp下载量：{{app.downloads}}</span>
+                            </li>
+                        </ul>
+                        <p>
+                            <a class="btn btn-default"
+                               href="http://127.0.0.1:8000/download/{{app.app_name}}"
+                               role="button">前往下载 »</a>
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/jquery-1.12.4.min.js"></script>
+<script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

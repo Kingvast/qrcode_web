@@ -1,0 +1,22 @@
+# server
+git+https://github.com/channelcat/sanic.git
+
+# database
+cloudant==2.8.1
+
+# unit test
+pytest==3.2.1
+pytest-sanic==0.1.8
+
+# tools
+marshmallow==2.13.5
+raven==6.3.0
+raven-aiohttp==0.6.0
+click==6.7
+mkdocs==0.17.0
+user-agents==1.1.0
+ua-parser==0.7.3
+jinja2==2.10
+
+# 开发用的组件
+ipython==6.2.1

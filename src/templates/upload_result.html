@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{upload_result}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/upload_result.css" />
+</head>
+<body>
+    <div class="result-page">
+        <div class="result-page-container">
+            <div class="result-page-main">
+                <h3>
+                    <strong>{{upload_result}}</strong>
+                </h3>
+                <div class="result-page-actions">
+                    <div>
+                        <input type="button" value="前往下载" style="display:{{display_property}}" onclick="{{download_url}}"/>
+                        <input type="button" value="返回首页" onclick="{{upload_url}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
